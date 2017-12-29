@@ -1,2 +1,9 @@
-<h1>Jestem na form_new</h1>
-<p><%= student.first_name%></p>
+<h1>Podanie</h1>
+<p><%= Date.today%>, Wrocław</p>
+<h2>Dane studenta</h2>
+<p><strong>Numer Albumu:</strong> <%= student.id_number%></p>
+<p><strong>Imie:</strong> <%= student.first_name%></p>
+<p><strong>Nazwisko:</strong> <%= student.last_name%></p>
+<p><strong>E-mail:</strong> <%= student.email%></p>
+<p><strong>Płeć:</strong> <%= student.sex%></p>
+
