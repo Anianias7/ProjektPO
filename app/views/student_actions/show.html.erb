@@ -1,2 +1,3 @@
-<h1>Welcome my brother!</h1>
-<p><%=@student.first_name%></p>
+<h1>Obsługa kursów poprawkowych</h1>
+<h3>Tworzenie</h3>
+<%= link_to "Złóż podanie", new_application_form_path(student_id: @student.id)%>

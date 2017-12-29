@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-	has_many :applications
+	has_many :application_forms
 end
