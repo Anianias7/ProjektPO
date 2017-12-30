@@ -7,3 +7,10 @@
 <p><strong>E-mail:</strong> <%= student.email%></p>
 <p><strong>Płeć:</strong> <%= student.sex%></p>
 
+<%= form_for @application_form do |f| %>
+	<%= f.hidden_field :student_id %>
+	<%= f.fields_for :correction_course do |c| %>
+		<%= c.collection_select :application_form_id, CorrectionCourse.available,:id,:name%><br/>
+	<% end %>
+	<%= f.submit %>
+<% end %>

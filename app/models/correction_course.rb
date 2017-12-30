@@ -1,5 +1,5 @@
 class CorrectionCourse < ApplicationRecord
-	belongs_to :application_form, foreign_key: "application_form_id"
+	belongs_to :application_form, optional: true
 
 	enum course_type: [:laboratorium, :ćwiczenia, :wykład, :projekt, :seminarium, :inne]
 
