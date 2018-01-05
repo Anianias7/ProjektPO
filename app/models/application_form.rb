@@ -5,6 +5,6 @@ class ApplicationForm < ApplicationRecord
 	has_many :professor_registers
 	has_many :professors, through: :professor_registers
 
-	has_many :classroom_registers
-	has_many :classrooms, through: :classroom_registers, class_name: "Classroom::Classroom"
+	has_many :classroom_availabilities, class_name: "Classroom::ClassroomAvailabilities"
+	has_many :classrooms, through: :classroom_availabilities, class_name: "Classroom::ClassroomAvailabilities"
 end
