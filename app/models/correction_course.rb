@@ -1,5 +1,7 @@
 class CorrectionCourse < ApplicationRecord
 	belongs_to :application_form, optional: true
+	has_many :leads
+	has_many :professors, through: :leads
 
 	enum course_type: [:laboratorium, :ćwiczenia, :wykład, :projekt, :seminarium, :inne]
 

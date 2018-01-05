@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105105242) do
+ActiveRecord::Schema.define(version: 20180105122126) do
 
   create_table "application_forms", force: :cascade do |t|
     t.integer "student_id"
@@ -44,6 +44,23 @@ ActiveRecord::Schema.define(version: 20180105105242) do
     t.boolean "is_list_closed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "leads", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "professor_id"
+    t.integer "correction_course_id"
+  end
+
+  create_table "professors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "professor_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "sex"
+    t.string "email"
   end
 
   create_table "students", force: :cascade do |t|
