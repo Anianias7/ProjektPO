@@ -6,7 +6,9 @@ class ApplicationFormsController < ApplicationController
 	end
 
 	def create
-		student.application_forms.create(application_form_params)
+    student.application_forms.create.tap do |af|
+      af.correction_course = CorrectionCourse.find(params[:application_form][:correction_course])
+    end
 		redirect_to student_action_path
 	end
 
@@ -18,9 +20,5 @@ class ApplicationFormsController < ApplicationController
 
 	def student_id
 		params[:student_id] || params[:application_form][:student_id]
-	end
-
-	def application_form_params
-		params.require(:application_form).permit(correction_course_attributes: [:application_form_id])
 	end
 end
