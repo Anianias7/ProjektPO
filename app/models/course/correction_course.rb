@@ -8,5 +8,9 @@ module Course
 
 		scope :available, -> { where(application_form_id: nil) }
 		scope :claimed, -> { where.not(application_form_id: nil) }
+
+    def full_name
+      "#{name} #{course_type[0].upcase}"
+    end
 	end
 end

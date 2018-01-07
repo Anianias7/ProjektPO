@@ -1,0 +1,2 @@
+module ApplicationFormAdjustmentsHelper
+end

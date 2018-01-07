@@ -1,0 +1,9 @@
+<h1>Poprawki do zgloszenia nr <%=@application_form.number%></h1>
+
+<%= form_for @application_form_adjustment, url: application_form_adjustments_path do |f| %>
+	<%= f.hidden_field :application_form_id %>
+  <%= f.text_area :description%><br/>
+	<%= f.submit %>
+<% end %>
+
+<%= link_to "Wroc", :back%>
