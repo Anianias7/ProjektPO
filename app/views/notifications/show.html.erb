@@ -1,0 +1,9 @@
+<h1>Zgloszenie nr <%= @application_form.number%></h1>
+<p><strong>Kurs:</strong> <%=@course.full_name%></p>
+<p><strong>Dzien:</strong> <%=@classroom_availability.week_day%></p>
+<p><strong>Tydzien:</strong> N</p>
+<p><strong>Godzina:</strong> <%=@classroom_availability.time%></p>
+<p><strong>Sala:</strong> <%=@classroom.full_name%></p>
+
+<%= link_to "Zaproponuj zmiany", new_application_form_adjustment_path(application_form_id: @application_form.id)%>
+<%= link_to "Akceptuj", "#"%>

@@ -7,8 +7,8 @@
 <p><strong>E-mail:</strong> <%= student.email%></p>
 <p><strong>Płeć:</strong> <%= student.sex%></p>
 
-<%= form_for @application_form do |f| %>
+<%= form_for @application_form, url: application_forms_path do |f| %>
 	<%= f.hidden_field :student_id %>
-  <%= f.collection_select :correction_course, CorrectionCourse.available,:id,:name%><br/>
+  <%= f.collection_select :correction_course, Course::CorrectionCourse.available,:id,:name%><br/>
 	<%= f.submit %>
 <% end %>

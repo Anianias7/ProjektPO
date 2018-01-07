@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105154731) do
+ActiveRecord::Schema.define(version: 20180107110658) do
+
+  create_table "application_form_adjustments", force: :cascade do |t|
+    t.integer "application_form_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "application_forms", force: :cascade do |t|
     t.integer "student_id"
