@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: application_forms
+#
+#  id         :integer          not null, primary key
+#  student_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 module ApplicationForm
 	class ApplicationForm < ApplicationRecord
 		belongs_to :student, class_name: "Student::Student"
