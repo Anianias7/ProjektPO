@@ -9,12 +9,12 @@ class ApplicationFormsController < ApplicationController
   end
 
   def create
-    #student.application_forms.create.tap do |af|
-    #  af.correction_course = Course::CorrectionCourse.find(correction_course_id)
-    #  af.professors << Professor::Professor.find(professor_id)
-    #  classroom_availability.update(application_form_id: af.id)
-    #end
-    #redirect_to student_action_path
+    student.application_forms.create.tap do |af|
+      af.correction_course = Course::CorrectionCourse.find(correction_course_id)
+      af.professors << Professor::Professor.find(professor_id)
+      classroom_availability.update(application_form_id: af.id)
+    end
+    redirect_to student_action_path
   end
 
   private 
