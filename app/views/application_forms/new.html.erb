@@ -1,5 +1,7 @@
-<h1>Podanie</h1>
-<p><%= Date.today%>, Wrocław</p>
+<header id='application_form_header'>
+  <h1>Podanie <%= application_form_number%></h1>
+  <p><%= Date.today%>, Wrocław</p>
+</header>
 <h2>Dane studenta</h2>
 <p><strong>Numer Albumu:</strong> <%= student.id_number%></p>
 <p><strong>Imie:</strong> <%= student.first_name%></p>
@@ -9,6 +11,15 @@
 
 <%= form_for @application_form, url: application_forms_path do |f| %>
 	<%= f.hidden_field :student_id %>
-  <%= f.collection_select :correction_course, Course::CorrectionCourse.available,:id,:name%><br/>
-	<%= f.submit %>
+  <h2>Nazwa Kursu:</h2>
+  <%= f.collection_select :correction_course, Course::CorrectionCourse.available,:id,:name, {include_blank: 'Wybierz kurs', locale: :pl}, {required: true}%><br/>
+  <h2>Prowadzacy:</h2>
+  <%= f.grouped_collection_select :professors, Course::CorrectionCourse.available, :professors, :name, :id, :full_name, {include_blank: 'Wybierz prowadzacego'} %>
+  <h2>Termin i Sala:</h2>
+  <%= f.collection_select :classrooms, Classroom::Classroom.all,:id,:full_name%><br/>
+  <%= f.grouped_collection_select :classroom_availabilities, Classroom::Classroom.all, :classroom_availabilities, :full_name, :id, :available_on %>
+  <br/>
+  <br/>
+	<%= f.submit 'Zloz podanie' %>
 <% end %>
+<%= link_to "Wroc", :back%>
