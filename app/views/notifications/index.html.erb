@@ -1,10 +1,13 @@
-<table>
-  <tbody>
-    <% @application_forms.each do |application_form| %>
-      <tr>
-        <th><%= application_form.correction_course.full_name %></th>
-        <th><%=link_to "Szczegoly", notification_path(application_form.correction_course)%></th>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
+<body>
+	<h1 id="title">MOJE ZGŁOSZENIA</h1>
+	<table cellspacing="80">>
+  		<tbody 
+    		<% @application_forms.each do |application_form| %>
+      		<tr>
+        	<th class="courseName"><%= application_form.correction_course.full_name %></th>
+        	<th class="detailsButton"><%=link_to "Szczegoly", notification_path(application_form.correction_course)%></th>
+      		</tr>
+    	<%end%>
+  		</tbody>
+	</table>
+</body>

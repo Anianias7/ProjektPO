@@ -1,3 +1,29 @@
-<h1>Obsługa kursów poprawkowych</h1>
-<h3>Tworzenie</h3>
-<%= link_to "Złóż podanie", new_application_form_path(student_id: @student.id)%>
+
+<h1 class="title">OBSŁUGA KURSÓW POPRAWKOWYCH</h1>
+<div>
+	<div>
+		<h3 class="headline">Przeglądanie</h3>
+		<div class="buttonContainer">
+			<button class="menuButton" type="button">Aktualne listy zapisowe</button>
+			<button class="menuButton" type="button">Aktualne podania</button>
+		</div>
+	</div>
+	<div>
+		<h3 class="headline">Tworzenie</h3>
+		<div class="buttonContainer">
+			<button class="menuButton" type="button">Otwórz listę zapisową na kurs</button>
+			<button class="menuButton" type="button"><%= link_to "Złóż podanie", new_application_form_path(student_id: @student.id)%>
+				
+			</button>
+		</div>
+	</div>
+	<div>
+		<h3 class="headline">Wyszukiwanie</h3>
+		<div class="buttonContainer">
+			<button class="menuButton" type="button">Szukaj sali</button>
+			<button class="menuButton" type="button">Szukaj prowadzącego</button>
+		</div>
+	</div>
+</div>
+<!-- <h3>Tworzenie</h3>
+<%= link_to "Złóż podanie", new_application_form_path(student_id: @student.id)%> -->

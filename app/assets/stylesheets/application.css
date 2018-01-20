@@ -17,7 +17,16 @@
 #main {
   background-color: #FEE49D;
   margin: 50px 200px;
-  padding: 0 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 90px;
   border: 1px solid black;
+  width: 70%;
 }
+
+#headline {
+	border-bottom: 5px solid black;
+}
+
+
 

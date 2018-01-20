@@ -1,0 +1,25 @@
+// Place all the styles related to the Notification controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#title{
+	text-align: center;
+}
+
+.courseName {
+	width: 250px;
+	border: 1px black solid;
+	background-color: #DCDCDC;
+	padding: 10px;
+	text-align: left;
+	margin-right: 60px;
+}
+
+.detailsButton {
+	width: 100px;
+	border: 1px black solid;
+	background-color: white;
+
+}
